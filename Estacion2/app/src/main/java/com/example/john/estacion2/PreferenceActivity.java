@@ -6,28 +6,49 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.support.v4.app.NotificationCompat;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 
+
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+
 public class PreferenceActivity extends Activity {
 
     SharedPreferences getData;
     RelativeLayout rl1;
     TextView userName;
+    TextView LLUVIA;
+    TextView VIENTO;
+    TextView TEMP;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_preference);
         rl1 = (RelativeLayout) findViewById(R.id.rl1);
         userName = (TextView) findViewById(R.id.tvLogin);
+        LLUVIA = (TextView) findViewById(R.id.tvlluvia);
+        VIENTO = (TextView) findViewById(R.id.tvviento);
+        TEMP = (TextView) findViewById(R.id.tvtemp);
         Button settings = (Button) findViewById(R.id.btSettings);
+
+
+
 
         TextView font1 = (TextView) findViewById(R.id.Intro);
         Typeface customfontInst = Typeface.createFromAsset(getAssets(),"fonts/CaviarDreams_BoldItalic.ttf");
         font1.setTypeface(customfontInst);
+
+        Typeface customfontparam = Typeface.createFromAsset(getAssets(),"fonts/GrandHotel-Regular.otf");
+        LLUVIA.setTypeface(customfontparam);
+        VIENTO.setTypeface(customfontparam);
+        TEMP.setTypeface(customfontparam);
+        userName.setTypeface(customfontInst);
 
         settings.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,8 +81,10 @@ public class PreferenceActivity extends Activity {
 
         }*/
         userName.setText ("Bienvenido(a) " + userText);
+        LLUVIA.setText(String.valueOf(lluvia));
+        TEMP.setText(String.valueOf(temp) + " °C");
+        VIENTO.setText(String.valueOf(viento) + " km/h");
     }
-
 }
 
 

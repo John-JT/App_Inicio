@@ -10,25 +10,117 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
+        android:textAlignment="center"
         android:text="New Text"
         android:textSize="24sp" />
 
     <ImageView
-        android:layout_width="250sp"
-        android:layout_height="250sp"
-        android:src="@mipmap/weatherman"
+        android:id="@+id/illuvia"
+        android:layout_width="100sp"
+        android:layout_height="wrap_content"
         android:layout_below="@id/tvLogin"
         android:layout_centerHorizontal="true"
+        android:adjustViewBounds="true"
         android:scaleType="fitXY"
+        android:src="@mipmap/lluvia" />
+
+    <TextView
+        android:id="@+id/tvlluvia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textAlignment="center"
+        android:text="New Text"
+        android:textSize="28sp"
+        android:layout_below="@id/illuvia"
+        android:background="@drawable/browncanvas"
+
+
+        />
+
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="start">
+
+    <ImageView
+        android:id="@+id/itemp"
+        android:layout_width="100sp"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/temperatura"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
         android:adjustViewBounds="true"
         />
+
+    <TextView
+        android:id="@+id/tvtemp"
+        android:layout_width="100sp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:text="New Text"
+        android:textSize="28sp"
+        android:layout_above="@id/itemp"
+        android:textAlignment="center"
+        android:layout_centerInParent="true"
+        android:background="@drawable/browncanvas"
+
+
+        />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="end">
+    <ImageView
+        android:id="@+id/iviento"
+        android:layout_width="100sp"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/viento"
+        android:layout_alignParentEnd="true"
+        android:adjustViewBounds="true"
+        android:layout_centerVertical="true"
+        />
+
+    <TextView
+        android:id="@+id/tvviento"
+        android:layout_width="100sp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:text="New Text"
+        android:textSize="28sp"
+        android:layout_above="@id/iviento"
+        android:textAlignment="center"
+        android:layout_centerInParent="true"
+        android:background="@drawable/browncanvas"
+
+
+
+        />
+
+
+    </RelativeLayout>
+
+
+
+
+
     <Button
         android:id="@+id/btSettings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:text="Configuración"
+        android:text="PREFERENCIAS"
         android:layout_marginBottom="10sp"
+        android:drawableLeft="@drawable/pref"
+        android:backgroundTint="@color/colorPrimary"
+        android:paddingTop="2sp"
+        android:paddingBottom="2sp"
         />
 
     <TextView
@@ -36,8 +128,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/btSettings"
+        android:layout_marginTop="30sp"
         android:text="Nota: Los valores ingresados en el apartado de configuración servirán como valores mínimos para notificar al usuario en caso de que dicha variable alcance o sobrepase el valor ingresado por el mismo."
-        android:textSize="16sp" />
+        android:textSize="16sp"
+        android:background="@drawable/textbox2"
+
+        />
+
 
 </RelativeLayout>
 

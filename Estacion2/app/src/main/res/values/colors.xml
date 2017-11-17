@@ -2,8 +2,14 @@
 <resources>
     <color name="colorPrimary">#009688</color>
     <color name="colorPrimaryDark">#1a237e</color>
-    <color name="colorAccent">#c6bc5b</color>
+    <color name="colorAccent">#cec469</color>
     <color name="background_material_light">#e5d5c9</color>
+    <color name="primary_material_light">#283a9e</color>
+    <color name="accent_material_light">#9e0f00</color>
+    <color name="OtroFondo">#e2db98</color>
+    <color name="RojoPrueba2">#9e0f00</color>
+    <color name="AzulPrueba2">#475ac1</color>
+    <color name="RojoClaro">#c62828</color>
 
     <!-- Base application theme.
   <color name="colorPrimary">#3F51B8</color>

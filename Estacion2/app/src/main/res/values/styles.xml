@@ -16,4 +16,12 @@
         <item name="android:navigationBarColor">@color/colorPrimary</item>
     </style>
 
+    <style name="Prueba2" parent="Theme.AppCompat.Light" >
+        <item name="android:colorBackground">@color/OtroFondo</item>
+        <item name="colorAccent">@color/RojoPrueba2</item>
+        <item name="colorPrimary">@color/AzulPrueba2</item>
+        <item name="android:navigationBarColor">@color/AzulPrueba2</item>
+        <item name="android:statusBarColor">@color/AzulPrueba2</item>
+    </style>
+
 </resources>

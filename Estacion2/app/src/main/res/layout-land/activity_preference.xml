@@ -57,13 +57,14 @@
             android:layout_alignParentStart="true"
             android:layout_centerVertical="true"
             android:adjustViewBounds="true"
-            android:src="@mipmap/temperatura_trans" />
+            android:src="@mipmap/temperatura_trans"
+            android:layout_below="@id/tvtemp"/>
 
         <TextView
             android:id="@+id/tvtemp"
             android:layout_width="100sp"
             android:layout_height="wrap_content"
-            android:layout_above="@id/itemp"
+            android:layout_alignParentTop="true"
             android:layout_alignParentStart="true"
             android:layout_centerInParent="true"
             android:background="@drawable/browncanvas"
@@ -89,14 +90,16 @@
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:adjustViewBounds="true"
-            android:src="@mipmap/viento_trans" />
+            android:src="@mipmap/viento_trans"
+            android:layout_below="@id/tvviento"
+        />
 
         <TextView
             android:id="@+id/tvviento"
             android:layout_width="100sp"
             android:layout_height="wrap_content"
-            android:layout_above="@id/iviento"
             android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
             android:layout_centerInParent="true"
             android:background="@drawable/browncanvas"
             android:text="New Text"
@@ -112,12 +115,13 @@
 
     <!--android:backgroundTint="@color/colorPrimary"-->
 
+
     <Button
         android:id="@+id/btSettings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_marginBottom="10sp"
+        android:layout_below="@id/tvlluvia"
+        android:layout_centerHorizontal="true"
         android:backgroundTint="@color/AzulPrueba2"
         android:drawableLeft="@drawable/pref"
         android:paddingBottom="2sp"
@@ -128,11 +132,13 @@
         android:id="@+id/Intro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
         android:layout_below="@id/btSettings"
-        android:layout_marginTop="30sp"
+        android:layout_centerHorizontal="true"
         android:background="@drawable/textbox2"
         android:text="Nota: Los valores ingresados en el apartado de configuración servirán como valores mínimos para notificar al usuario en caso de que dicha variable alcance o sobrepase el valor ingresado por el mismo."
-        android:textSize="16sp"
+        android:textSize="13sp"
+
 
         />
 

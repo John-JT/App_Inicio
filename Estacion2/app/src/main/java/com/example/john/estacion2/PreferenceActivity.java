@@ -6,17 +6,10 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Bundle;
-import android.support.v4.app.NotificationCompat;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
-
-
-import android.app.Notification;
-import android.app.NotificationManager;
-import android.app.PendingIntent;
 
 public class PreferenceActivity extends Activity {
 
@@ -26,25 +19,24 @@ public class PreferenceActivity extends Activity {
     TextView LLUVIA;
     TextView VIENTO;
     TextView TEMP;
+    String temp, lluvia, viento;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_preference);
-        rl1 = (RelativeLayout) findViewById(R.id.rl1);
-        userName = (TextView) findViewById(R.id.tvLogin);
-        LLUVIA = (TextView) findViewById(R.id.tvlluvia);
-        VIENTO = (TextView) findViewById(R.id.tvviento);
-        TEMP = (TextView) findViewById(R.id.tvtemp);
-        Button settings = (Button) findViewById(R.id.btSettings);
+        rl1 = findViewById(R.id.rl1);
+        userName = findViewById(R.id.tvLogin);
+        LLUVIA = findViewById(R.id.tvlluvia);
+        VIENTO = findViewById(R.id.tvviento);
+        TEMP = findViewById(R.id.tvtemp);
+        Button settings = findViewById(R.id.btSettings);
 
 
-
-
-        TextView font1 = (TextView) findViewById(R.id.Intro);
-        Typeface customfontInst = Typeface.createFromAsset(getAssets(),"fonts/CaviarDreams_BoldItalic.ttf");
+        TextView font1 = findViewById(R.id.Intro);
+        Typeface customfontInst = Typeface.createFromAsset(getAssets(), "fonts/CaviarDreams_BoldItalic.ttf");
         font1.setTypeface(customfontInst);
 
-        Typeface customfontparam = Typeface.createFromAsset(getAssets(),"fonts/GrandHotel-Regular.otf");
+        Typeface customfontparam = Typeface.createFromAsset(getAssets(), "fonts/GrandHotel-Regular.otf");
         LLUVIA.setTypeface(customfontparam);
         VIENTO.setTypeface(customfontparam);
         TEMP.setTypeface(customfontparam);
@@ -69,24 +61,32 @@ public class PreferenceActivity extends Activity {
 
     private void getSettings() {
         getData = getSharedPreferences("myPrefs", Context.MODE_PRIVATE);
-        int lluvia = getData.getInt("lluvia_key",99999);
-        int temp = getData.getInt("temp_key",99999);
-        int viento = getData.getInt("viento_key",99999);
         String userText = getData.getString("user_key", "Visitante");
-     /*   if (parameterText.equals("white")) {
 
-        } else if (parameterText.equals("slate")) {
+        /*lluvia = getData.getString("lluvia_key", "99999");
+        temp = getData.getString("temp_key", "99999");
+        viento = getData.getString("viento_key", "99999");*/
 
-        } else {
+        double temp_pru = getDouble(getData, "temp_key", 9999.0);
+        double llu_pru = getDouble(getData, "lluvia_key", 9999.0);
+        double vie_pru = getDouble(getData, "viento_key", 9999.0);
 
-        }*/
-        userName.setText ("Bienvenido(a) " + userText);
-        LLUVIA.setText(String.valueOf(lluvia));
-        TEMP.setText(String.valueOf(temp) + " °C");
-        VIENTO.setText(String.valueOf(viento) + " km/h");
+
+        userName.setText("Bienvenido(a) " + userText);
+        LLUVIA.setText(String.valueOf(llu_pru) + "%");
+        TEMP.setText(String.valueOf(temp_pru) + " °C");
+        VIENTO.setText(String.valueOf(vie_pru) + " km/h");
+
     }
+
+    SharedPreferences.Editor putDouble(final SharedPreferences.Editor edit, final String key, final double value) {
+        return edit.putLong(key, Double.doubleToRawLongBits(value));
+    }
+
+    double getDouble(final SharedPreferences prefs, final String key, final double defaultValue) {
+        return Double.longBitsToDouble(prefs.getLong(key, Double.doubleToLongBits(defaultValue)));
+    }
+
 }
-
-
 
 

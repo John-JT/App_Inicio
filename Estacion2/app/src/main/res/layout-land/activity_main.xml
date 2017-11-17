@@ -81,7 +81,7 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:padding="5sp"
-                android:textSize="15sp"
+                android:textSize="20sp"
                 android:text="Tiempo(min)" />
 
             <TextView
@@ -90,7 +90,7 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:padding="5sp"
-                android:textSize="15sp"
+                android:textSize="20sp"
                 android:text="Temperatura(°C)" />
 
             <TextView
@@ -99,7 +99,7 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:padding="5sp"
-                android:textSize="15sp"
+                android:textSize="20sp"
                 android:text="Lluvia(%)" />
 
             <TextView
@@ -108,7 +108,7 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:padding="5sp"
-                android:textSize="15sp"
+                android:textSize="20sp"
                 android:text="Viento(km/h)" />
 
 
